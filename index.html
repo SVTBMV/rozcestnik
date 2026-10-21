@@ -71,17 +71,39 @@
   .icon { font-size: clamp(2.4rem, 10vw, 3.2rem); line-height: 1; }
   .label { font-size: clamp(1rem, 4vw, 1.15rem); font-weight: 600; }
 
+  .grid.single { grid-template-columns: 1fr; }
+  .grid.half {
+    grid-template-columns: calc(50% - 7px);
+    justify-content: center;
+  }
+  .tile.big {
+    min-height: 200px;
+    border-color: var(--accent);
+    background: linear-gradient(145deg, #1e293b, #243b55);
+  }
+  .tile.big .icon { font-size: clamp(3.4rem, 14vw, 4.6rem); }
+  .tile.big .label { font-size: clamp(1.3rem, 6vw, 1.7rem); letter-spacing: .04em; }
+
   @media (min-width: 560px) {
     .tile { min-height: 180px; }
+    .tile.big { min-height: 240px; }
   }
   @media (max-width: 340px) {
     .grid { grid-template-columns: 1fr; }
+    .grid.half { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
   <div class="wrap">
     <h1>ROZCESTNÍK</h1>
+
+    <div class="grid single">
+      <a class="tile big" href="https://svtbmv.github.io/TB/">
+        <span class="icon">🏭</span>
+        <span class="label">Výrobní portál</span>
+      </a>
+    </div>
 
     <div class="group-title">Denní přehled</div>
     <div class="grid">
@@ -95,11 +117,7 @@
       </a>
     </div>
 
-    <div class="grid">
-      <a class="tile" href="https://svtbmv.github.io/TB/">
-        <span class="icon">🏭</span>
-        <span class="label">Výrobní portál</span>
-      </a>
+    <div class="grid half">
       <a class="tile" href="https://svtbmv.github.io/MP/">
         <span class="icon">📅</span>
         <span class="label">Měsíční přehled</span>
