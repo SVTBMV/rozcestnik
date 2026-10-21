@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<title>Rozcestník</title>
+<style>
+  :root {
+    /* Barvy – případně uprav, aby sedly ke zbytku stránek */
+    --bg: #0f172a;
+    --card: #1e293b;
+    --card-hover: #273449;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    padding: max(20px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom));
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  h1 {
+    text-align: center;
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    letter-spacing: .08em;
+    margin: 12px 0 28px;
+  }
+  .group-title {
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 4px 10px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 26px;
+  }
+  .tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 150px;
+    padding: 18px 10px;
+    background: var(--card);
+    color: var(--text);
+    text-decoration: none;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,.06);
+    box-shadow: 0 6px 18px rgba(0,0,0,.25);
+    transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    text-align: center;
+  }
+  .tile:hover, .tile:focus-visible {
+    background: var(--card-hover);
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    outline: none;
+  }
+  .tile:active { transform: scale(.97); }
+  .icon { font-size: clamp(2.4rem, 10vw, 3.2rem); line-height: 1; }
+  .label { font-size: clamp(1rem, 4vw, 1.15rem); font-weight: 600; }
+
+  @media (min-width: 560px) {
+    .tile { min-height: 180px; }
+  }
+  @media (max-width: 340px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>ROZCESTNÍK</h1>
+
+    <div class="group-title">Denní přehled</div>
+    <div class="grid">
+      <a class="tile" href="https://svtbmv.github.io/vykony/">
+        <span class="icon">📊</span>
+        <span class="label">Libřice</span>
+      </a>
+      <a class="tile" href="https://svtbmv.github.io/TBDivec/">
+        <span class="icon">📊</span>
+        <span class="label">Divec</span>
+      </a>
+    </div>
+
+    <div class="grid">
+      <a class="tile" href="https://svtbmv.github.io/TB/">
+        <span class="icon">🏭</span>
+        <span class="label">Výrobní portál</span>
+      </a>
+      <a class="tile" href="https://svtbmv.github.io/MP/">
+        <span class="icon">📅</span>
+        <span class="label">Měsíční přehled</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
