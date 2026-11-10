@@ -95,7 +95,12 @@
   .tile.big .badge svg { width: 48px; height: 48px; }
   .tile.big .label { font-size: clamp(1.3rem, 6vw, 1.7rem); letter-spacing: .04em; }
 
+  /* Mobil: třetí dlaždice přes celou šířku, ať nezůstane sama v půlce */
+  .grid.three .tile:last-child { grid-column: 1 / -1; }
+
   @media (min-width: 560px) {
+    .grid.three { grid-template-columns: repeat(3, 1fr); }
+    .grid.three .tile:last-child { grid-column: auto; }
     .tile { min-height: 180px; }
     .tile.big { min-height: 250px; }
   }
@@ -121,7 +126,7 @@
       </a>
     </div>
 
-    <div class="grid">
+    <div class="grid three">
       <a class="tile" href="https://svtbmv.github.io/vykony/">
         <span class="badge">
           <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -140,6 +145,16 @@
           </svg>
         </span>
         <span class="label">Měsíční přehled</span>
+      </a>
+      <a class="tile" href="https://svtbmv.github.io/TBDivec/">
+        <span class="badge">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 17l5-5 4 4 8-9"/>
+            <path d="M15 7h5v5"/>
+            <path d="M3 21h18"/>
+          </svg>
+        </span>
+        <span class="label">Roční přehled</span>
       </a>
     </div>
   </div>
